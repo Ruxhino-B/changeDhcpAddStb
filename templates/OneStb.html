@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<br>
+<div class="col d-flex justify-content-center">
+    <form method="POST" style="position:absolute;left:0,right:0;margin:auto" action="{% url 'onestb' %}">{% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Add Only Amino Mac</label>
+            <input type="text" name="mac" class="form-control" placeholder="00:02:02:2D:E5:4E">
+            <div id="emailHelp" class="form-text">Be sure that Stb is AMINO and is split by ":".</div>
+            <h3 class="text-danger">{{response}}</h3>
+
+        </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock content %}

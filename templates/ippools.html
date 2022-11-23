@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center">ip_pools</h2>
+<table class="table table-secondary">
+    <thead>
+    <tr>
+      <th scope="col" >ID</th>
+      <th scope="col" >City ID</th>
+      <th scope="col" >IP Address</th>
+      <th scope="col" >Stb Mac</th>
+    </tr>
+  </thead>
+    <tbody>
+    {% for pool in object_list %}
+    <tr>
+        <td>{{ pool.id }}</td>
+        <td>{{ pool.city_id }}</td>
+        <td>{{ pool.ipaddress }}</td>
+        <td>{{ pool.stb_mac }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock content %}
